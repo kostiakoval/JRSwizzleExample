@@ -5,14 +5,14 @@ An example of usage JRSwizzle library
 
 How to implement
 
-1) Create a category of class you want to swizzle method.
-2) Create new method
-3) In swizzled method call original implementation. You do this by calling the same method. This will not end in infinity loop because our method will point to original implementation
-4) Swizzle methods in load or initialise method. This is the best place to do because we want to swizzle method only once. 
-5) Swizzle methods in dispatch_once block. This will guaranty Thread safe and make sure we swizzle method just once.
+1) Create a category of class you want to swizzle method.   
+2) Create new method  
+3) In swizzled method call original implementation. You do this by calling the same method. This will not end in infinity loop because our method will point to original implementation  
+4) Swizzle methods in load or initialise method. This is the best place to do because we want to swizzle method only once.   
+5) Swizzle methods in dispatch_once block. This will guaranty Thread safe and make sure we swizzle method just once.  
 
 Here is an implementation
-
+```objective-c  
 //
 //  UIViewController+KKSwizzle.m
 //  MethodSwizzle
@@ -45,6 +45,6 @@ Here is an implementation
     NSLog(@"xxx_viewWillAppear for - %@", NSStringFromClass(self.class));
 }
 @end
-
+```
 
 
